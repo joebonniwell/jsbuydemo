@@ -1,0 +1,14 @@
+body {
+	background-color: #30373b;
+}
+
+.container {
+	max-width: 100%;
+	width: 480px;
+	height: 640px;
+
+	background-color: white;
+
+	margin-left: auto;
+	margin-right: auto;
+}
