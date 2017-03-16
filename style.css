@@ -5,10 +5,27 @@ body {
 .container {
 	max-width: 100%;
 	width: 480px;
-	height: 640px;
+	/*height: 640px;*/
 
 	background-color: white;
 
 	margin-left: auto;
 	margin-right: auto;
+
+	padding: 20px 0;
+}
+
+.product-container {
+	min-height: 400px;
+	text-align: center;
+}
+
+.buttons-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.buttons-container button {
+	width: 40%;
+	height: 80px;
 }
