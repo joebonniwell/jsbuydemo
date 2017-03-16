@@ -5,9 +5,15 @@ function app() {
 
   var allProducts;
   var currentProduct;
+  var currentCart;
 
   document.getElementById('yes-button').onclick = function () {
-    // TODO: add current product to cart
+    var cart = shopClient.fetchRecentCart().then(cart => {
+      cart.createLineItemsFromVariants({variant: currentProduct.selectedVariant, quantity: 1}).then(cart => {
+        displayCart(cart)
+      });
+    });
+
     currentProduct = nextProduct(allProducts, currentProduct);
     displayProduct(currentProduct)
   };
@@ -20,6 +26,10 @@ function app() {
     accessToken: '468e62e2b13f9682f088e1d73193a4e6',
     domain: 'lcfjsbuydemo.myshopify.com',
     appId: '6'
+  });
+
+  shopClient.fetchRecentCart().then(cart => {
+    displayCart(cart);
   });
 
   shopClient.fetchAllProducts()
@@ -37,6 +47,14 @@ function app() {
   .catch(function () {
     console.log('Request failed');
   });
+}
+
+function displayCart (cart) {
+  var cartDisplayString = '';
+  if (cart.lineItemCount > 0) {
+    cartDisplayString = '' + cart.lineItemCount + ' item(s) totalling $' + cart.subtotal;
+  }
+  document.getElementById('cart-summary').innerHTML = cartDisplayString;
 }
 
 function displayProduct (product) {

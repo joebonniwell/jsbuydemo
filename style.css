@@ -12,10 +12,19 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 
-	padding: 20px 0;
+	padding-bottom: 20px;
+}
+
+#cart-summary {
+	text-align: right;
+	padding-right: 10px;
+
+	background-color: lightgreen;
+	line-height: 60px;
 }
 
 .product-container {
+	padding-top: 20px;
 	min-height: 400px;
 	text-align: center;
 }
