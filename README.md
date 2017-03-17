@@ -8,3 +8,8 @@ JSBuyDemo is a demonstration of Shopify's JS Buy SDK.
 + The cart summary includes the total items and the subtotal
 + The clear cart button empties the cart
 + Checkout button takes the user to the checkout process for the Shopify store
+
+### Instructions:
+1. Clone the repository
+2. Open the demo.html file in a browser
+
