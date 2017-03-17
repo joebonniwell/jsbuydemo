@@ -1,3 +1,13 @@
+button {
+	border-image: none;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 8px;
+	font-size: 24px;
+	cursor: pointer;
+	color: #eee;
+}
+
 body {
 	background-color: #30373b;
 }
@@ -5,7 +15,6 @@ body {
 .container {
 	max-width: 100%;
 	width: 480px;
-	/*height: 640px;*/
 
 	background-color: white;
 
@@ -23,12 +32,24 @@ body {
 }
 
 .cart-container button {
-	width: 80px;
+	width: 100px;
 	height: 50px;
 	margin: auto 0;
+	font-size: 14px;
+}
+
+#clear-cart-button {
+	background-color: #666;
+	border-color: #555;
+}
+
+#checkout-button {
+	background-color: #7ab55c;
+	border-color: #699c4f;
 }
 
 #cart-summary {
+	color: #333;
 	line-height: 60px;
 }
 
@@ -46,4 +67,14 @@ body {
 .buttons-container button {
 	width: 40%;
 	height: 80px;
+}
+
+#no-button {
+	background-color: #ff3b21;
+	border-color: #db331d;
+}
+
+#yes-button {
+	background-color: #7ab55c;
+	border-color: #699c4f;
 }
