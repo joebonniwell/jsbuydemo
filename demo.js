@@ -51,9 +51,12 @@ function app() {
 
 function displayCart (cart) {
   var cartDisplayString = '';
+  var cartVisibility = 'none';
   if (cart.lineItemCount > 0) {
     cartDisplayString = '' + cart.lineItemCount + ' item(s) totalling $' + cart.subtotal;
+    cartVisibility = 'block';
   }
+  document.getElementsByClassName('cart-container')[0].style.display = cartVisibility;
   document.getElementById('cart-summary').innerHTML = cartDisplayString;
 }
 

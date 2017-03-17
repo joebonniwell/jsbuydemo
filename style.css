@@ -15,12 +15,22 @@ body {
 	padding-bottom: 20px;
 }
 
-#cart-summary {
+.cart-container {
+	display: none;
 	text-align: right;
-	padding-right: 10px;
-
 	background-color: lightgreen;
+}
+
+#cart-summary {
+	display: inline-block;
+	padding-right: 10px;
 	line-height: 60px;
+}
+
+#checkout-button {
+	width: 80px;
+	height: 50px;
+	margin: 5px 10px 5px 0px;
 }
 
 .product-container {
