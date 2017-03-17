@@ -8,18 +8,32 @@ function app() {
   var currentCart;
 
   document.getElementById('yes-button').onclick = function () {
-    var cart = shopClient.fetchRecentCart().then(cart => {
-      cart.createLineItemsFromVariants({variant: currentProduct.selectedVariant, quantity: 1}).then(cart => {
-        displayCart(cart)
+    shopClient.fetchRecentCart().then(cart => {
+      currentCart = cart;
+      currentCart.createLineItemsFromVariants({variant: currentProduct.selectedVariant, quantity: 1}).then(cart => {
+        currentCart = cart;
+        displayCart(currentCart)
       });
     });
 
     currentProduct = nextProduct(allProducts, currentProduct);
     displayProduct(currentProduct)
   };
+
   document.getElementById('no-button').onclick = function () {
     currentProduct = nextProduct(allProducts, currentProduct);
     displayProduct(currentProduct)
+  };
+
+  document.getElementById('checkout-button').onclick = function () {
+    window.location.href = currentCart.checkoutUrl;
+  };
+
+  document.getElementById('clear-cart-button').onclick = function () {
+    currentCart.clearLineItems().then(cart => {
+      currentCart = cart;
+      displayCart(currentCart);
+    });
   };
 
   const shopClient = ShopifyBuy.buildClient({
@@ -29,7 +43,8 @@ function app() {
   });
 
   shopClient.fetchRecentCart().then(cart => {
-    displayCart(cart);
+    currentCart = cart;
+    displayCart(currentCart);
   });
 
   shopClient.fetchAllProducts()
@@ -54,7 +69,7 @@ function displayCart (cart) {
   var cartVisibility = 'none';
   if (cart.lineItemCount > 0) {
     cartDisplayString = '' + cart.lineItemCount + ' item(s) totalling $' + cart.subtotal;
-    cartVisibility = 'block';
+    cartVisibility = 'flex';
   }
   document.getElementsByClassName('cart-container')[0].style.display = cartVisibility;
   document.getElementById('cart-summary').innerHTML = cartDisplayString;

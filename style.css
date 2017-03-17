@@ -19,18 +19,17 @@ body {
 	display: none;
 	text-align: right;
 	background-color: lightgreen;
+	justify-content: space-around;
+}
+
+.cart-container button {
+	width: 80px;
+	height: 50px;
+	margin: auto 0;
 }
 
 #cart-summary {
-	display: inline-block;
-	padding-right: 10px;
 	line-height: 60px;
-}
-
-#checkout-button {
-	width: 80px;
-	height: 50px;
-	margin: 5px 10px 5px 0px;
 }
 
 .product-container {
