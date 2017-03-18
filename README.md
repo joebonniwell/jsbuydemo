@@ -10,7 +10,7 @@ JSBuyDemo is a demonstration of Shopify's JS Buy SDK.
 + Checkout button takes the user to the checkout process for the Shopify store
 
 ### Example Screenshot
-![screenshot](https://gist.github.com/joebonniwell/a2ec9768da29d111c80288ff70cefab8#file-jsbuydemo-screenshot-20170318-png)
+![screenshot](https://gist.githubusercontent.com/joebonniwell/a2ec9768da29d111c80288ff70cefab8/raw/41e706b0915c254d15c9d814c919e5d8dfecff0d/jsbuydemo-screenshot-20170318.png)
 
 ### Instructions:
 1. Clone the repository
