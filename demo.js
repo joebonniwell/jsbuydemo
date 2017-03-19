@@ -54,7 +54,22 @@ function app() {
       console.log("Product: " + product.title);
     });
 
-    allProducts = products;
+    allProducts = products.sort(function (productA, productB) {
+      // Ignore cast
+      var titleA = productA.title.toUpperCase();
+      var titleB = productB.title.toUpperCase();
+
+      if (titleA < titleB) {
+        return -1;
+      }
+
+      if (titleA > titleB) {
+        return 1;
+      }
+
+      return 0;
+    });
+
     currentProduct = products[0];
 
     displayProduct(currentProduct);
